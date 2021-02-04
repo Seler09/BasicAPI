@@ -60,7 +60,7 @@ namespace CoreCodeCamp.Data
       return await query.ToArrayAsync();
     }
 
-    public async Task<Camp[]> GetAllCampsAsync(bool includeTalks = false)
+    public async Task<Camp[]> GetAllCamps(bool includeTalks = false)
     {
       _logger.LogInformation($"Getting all Camps");
 
@@ -76,7 +76,6 @@ namespace CoreCodeCamp.Data
 
       // Order It
       query = query.OrderByDescending(c => c.EventDate);
-
       return await query.ToArrayAsync();
     }
 

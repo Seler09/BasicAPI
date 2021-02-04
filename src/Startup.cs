@@ -20,18 +20,18 @@ namespace CoreCodeCamp
     {
       services.AddDbContext<CampContext>();
       services.AddScoped<ICampRepository, CampRepository>();
-
+      
       services.AddMvc()
-        .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
-
+         
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
       }
-      
+
       app.UseMvc();
     }
   }

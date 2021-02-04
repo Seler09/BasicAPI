@@ -12,7 +12,8 @@ namespace CoreCodeCamp.Data
     {
         public CampProfile()
         {
-            this.CreateMap<Camp, CampModel>();
+            this.CreateMap<Camp, CampModel>()
+                .ForMember( x => x.Venue, c => c.MapFrom(y => y.Location.VenueName));
         }
         
     }
